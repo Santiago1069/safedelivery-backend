@@ -1,0 +1,5 @@
+rootProject.name = 'safeDelivery'
+
+include ':dominio'
+include ':aplicacion'
+include ':infraestructura'
