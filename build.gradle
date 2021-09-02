@@ -39,6 +39,7 @@ allprojects {
 
     project.ext.springdata = ["org.springframework.data:spring-data-jdbc:1.1.13.RELEASE"]
     project.ext.springbootjdbc = ["org.springframework.boot:spring-boot-starter-jdbc:${springBootVersion}"]
+    project.ext.inject = ["javax.inject:javax.inject:1"]
 }
 
 buildscript {

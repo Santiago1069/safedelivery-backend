@@ -10,4 +10,9 @@ dependencies {
     compile project.ext.springbootweb
     compile project.ext.apachecommons
     compile project.ext.springbootjdbc
+
+    implementation project.ext.inject
+
+    implementation project(':dominio')
+    implementation project(':aplicacion')
 }
