@@ -2,6 +2,27 @@ package com.safedelivery.modelos.objetos;
 
 public enum TipoDocumento {
 
-    CEDULACIUDADANIA, PASAPORTE, CEDULAEXTRANJERIA, TARJETAIDENTIDAD, TARJETAEXTRANJERIA, NIT
+    CEDULACIUDADANIA(1),
+    PASAPORTE(2),
+    CEDULAEXTRANJERIA(3),
+    TARJETAIDENTIDAD(4),
+    TARJETAEXTRANJERIA(5),
+    NIT(6);
 
+    private int id;
+
+    TipoDocumento(int id) {
+        this.id = id;
+    }
+
+    public static TipoDocumento obtenerPorId(int id) {
+
+        for (TipoDocumento t : values()) {
+            if(t.id == id){
+                return t;
+            }
+        }
+
+        return null;
+    }
 }
