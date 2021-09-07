@@ -18,8 +18,8 @@ public class ConsultaProveedoresCasoUso {
         this.repositorioProveedores = repositorioProveedores;
     }
 
-    public List<Proveedor> consultar(){
-       return repositorioProveedores.consultar();
+    public List<Proveedor> consultarProveedor(){
+       return repositorioProveedores.consultarProveedor();
     }
 
 

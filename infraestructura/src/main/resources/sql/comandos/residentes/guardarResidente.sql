@@ -1,0 +1,2 @@
+INSERT INTO RESIDENTE (ID_RESIDENTE, ID_NUMERO_APARTAMENTO, TIPO_DOCUMENTO, NUMERO_DOCUMENTO, NOMBRE, APELLIDO, CELULAR, CORREO_ELECTRONICO)
+VALUES (:idResidente, :idNumeroApartamento, :idTipoDocumento, :numeroDocumento, :nombre, :apellido, :celular, :correo)

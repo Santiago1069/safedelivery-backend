@@ -21,4 +21,7 @@ public class ControladorResidentes {
     public List<Residente> consutaResidentes(){
         return consultarResidenteCasoDeUso.consultar();
     }
+
+
+
 }

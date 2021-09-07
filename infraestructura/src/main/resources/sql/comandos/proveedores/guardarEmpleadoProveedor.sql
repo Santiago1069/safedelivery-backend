@@ -1,0 +1,2 @@
+INSERT INTO EMPLEADO_PROVEEDOR (ID_EMPLEADO_PROVEEDOR, ID_PROVEEDOR, ID_TIPO_DOCUMENTO, NUMERO_DOCUMENTO, NOMBRE)
+VALUES (:idEmpleadoProveedor, :idProveedor, :idTipoDocumento, :numeroDocumento, :nombre);

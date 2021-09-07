@@ -3,23 +3,19 @@ package com.safedelivery.residente;
 import com.safedelivery.modelos.objetos.Residente;
 import com.safedelivery.repositorios.RepositorioResidentes;
 
-
 import javax.inject.Named;
-import java.util.List;
 
 @Named
-public class ConsultarResidenteCasoDeUso {
-
+public class EliminarResidenteCasoDeUso {
 
     private RepositorioResidentes repositorioResidentes;
 
-    public ConsultarResidenteCasoDeUso(RepositorioResidentes repositorioResidentes) {
+    public EliminarResidenteCasoDeUso (RepositorioResidentes repositorioResidentes){
         this.repositorioResidentes = repositorioResidentes;
-    }
-
-    public List<Residente> consultar(){
-        return repositorioResidentes.consultar();
 
     }
 
+    public void eliminarResidente(int idResidente){
+        repositorioResidentes.eliminarResidente(idResidente);
+    }
 }

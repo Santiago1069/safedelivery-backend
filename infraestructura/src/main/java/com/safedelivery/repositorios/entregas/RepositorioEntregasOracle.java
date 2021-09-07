@@ -2,11 +2,16 @@ package com.safedelivery.repositorios.entregas;
 
 import com.safedelivery.modelos.objetos.Entrega;
 import com.safedelivery.repositorios.RepositorioEntregas;
+import com.safedelivery.utilidades.sqlfiles.SqlStatement;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import java.util.List;
 
 public class RepositorioEntregasOracle implements RepositorioEntregas {
+
+    @SqlStatement(namespace = "entregas",
+            value = "consultarEntregas")
+    private String consultarEntregas;
 
     private NamedParameterJdbcTemplate jdbcTemplate;
     private MapperEntregas mapperEntregas;
@@ -19,12 +24,7 @@ public class RepositorioEntregasOracle implements RepositorioEntregas {
     @Override
     public List<Entrega> consultar(){
 
-        String sql = "SELECT * FROM ENTREGA " +
-                "   INNER JOIN EMPLEADO_PROVEEDOR ON ENTREGA.ID_EMPLEADO_PROVEEDOR = EMPLEADO_PROVEEDOR.ID_EMPLEADO_PROVEEDOR" +
-                "   INNER JOIN RESIDENTE ON ENTREGA.ID_RESIDENTE = RESIDENTE.ID_RESIDENTE" +
-                "   INNER JOIN TIPO_PAQUETE ON ENTREGA.ID_TIPO_PAQUETE = TIPO_PAQUETE.ID_TIPO_PAQUETE";
-
-        return jdbcTemplate.query(sql, mapperEntregas);
+        return jdbcTemplate.query(consultarEntregas, mapperEntregas);
 
     }
 

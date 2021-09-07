@@ -1,24 +1,25 @@
 package com.safedelivery.modelos.objetos;
 
-public class Registro {
+//* la tabla en base de datos se llama Registro
+public class Administrador {
 
-    int id;
+    int idAdministrador;
     String correo;
     String nombreCompleto;
     String contrasena;
     String repetirContrasena;
 
 
-    public Registro(int id, String correo, String nombreCompleto, String contrasena, String repetirContrasena) {
-        this.id = id;
+    public Administrador(int id, String correo, String nombreCompleto, String contrasena, String repetirContrasena) {
+        this.idAdministrador = id;
         this.correo = correo;
         this.nombreCompleto = nombreCompleto;
         this.contrasena = contrasena;
         this.repetirContrasena = repetirContrasena;
     }
 
-    public int getId() {
-        return id;
+    public int getIdAdministrador() {
+        return idAdministrador;
     }
 
     public String getCorreo() {

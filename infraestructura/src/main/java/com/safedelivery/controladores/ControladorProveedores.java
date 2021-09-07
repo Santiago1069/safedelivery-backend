@@ -23,7 +23,7 @@ public class ControladorProveedores {
 
     @GetMapping
     public List<Proveedor> consultarProveedores(){
-        return consultaProveedoresCasoUso.consultar();
+        return consultaProveedoresCasoUso.consultarProveedor();
     }
 
 

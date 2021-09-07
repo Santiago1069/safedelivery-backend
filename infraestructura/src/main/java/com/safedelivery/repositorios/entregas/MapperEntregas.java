@@ -22,7 +22,6 @@ public class MapperEntregas implements RowMapper<Entrega> {
         String nombreProveedor = rs.getString("NOMBRE");
 
         Proveedor idProveedorCreado = new Proveedor (idProveedorentidad, nombreProveedor);
-                rs.getObject("IDPROVEEDOR");
 
         // --------------------------------------------------------------------------------
         int idEmpleadoProveedor = rs.getInt("ID_EMPLEADO_PROVEEDOR");
@@ -38,7 +37,6 @@ public class MapperEntregas implements RowMapper<Entrega> {
         int numeroTorre = rs.getInt("NUMERO_TORRE");
 
         Apartamento idapartamentoResidente = new Apartamento(numeroApartamento, numeroTorre);
-        rs.getObject("ID_NUMERO_APARTAMENTO");
 
         // ----------------------------------------------------------------------------------------
 
