@@ -7,9 +7,10 @@ import com.safedelivery.repositorios.RepositorioProveedores;
 
 import javax.inject.Named;
 
+@Named
 public class GuardarEmpleadoProveedorCasoDeUso {
 
-    @Named
+
     private RepositorioProveedores repositorioProveedores;
 
     public GuardarEmpleadoProveedorCasoDeUso (RepositorioProveedores repositorioProveedores){

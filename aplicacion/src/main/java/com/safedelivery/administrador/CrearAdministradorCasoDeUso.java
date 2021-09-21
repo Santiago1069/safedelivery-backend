@@ -1,13 +1,14 @@
 package com.safedelivery.administrador;
 
 import com.safedelivery.modelos.objetos.Administrador;
+import com.safedelivery.modelos.objetos.DatosCrearAdministrador;
 import com.safedelivery.repositorios.RepositorioAdministrador;
 
 import javax.inject.Named;
 
+@Named
 public class CrearAdministradorCasoDeUso {
 
-    @Named
     private RepositorioAdministrador repositorioAdministrador;
 
     public CrearAdministradorCasoDeUso(RepositorioAdministrador repositorioAdministrador) {
@@ -15,8 +16,8 @@ public class CrearAdministradorCasoDeUso {
 
     }
 
-    public void crearAdministrador(Administrador administrador){
-        repositorioAdministrador.crearAdministrador(administrador);
+    public void crearAdministrador(DatosCrearAdministrador datosCrearAdministrador){
+        repositorioAdministrador.crearAdministrador(datosCrearAdministrador);
 
     }
 

@@ -1,13 +1,15 @@
 package com.safedelivery.repositorios.administrador;
 
 import com.safedelivery.modelos.objetos.Administrador;
+import com.safedelivery.modelos.objetos.DatosCrearAdministrador;
+import com.safedelivery.repositorios.RepositorioAdministrador;
 import com.safedelivery.utilidades.sqlfiles.SqlStatement;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class RepositorioAdministradorOracle {
+public class RepositorioAdministradorOracle implements RepositorioAdministrador {
 
     @SqlStatement(namespace = "administrador",
             value = "crearAdministrador")
@@ -22,15 +24,14 @@ public class RepositorioAdministradorOracle {
     }
 
 
-    public void crearAdministrador(Administrador administrador){
+    public void crearAdministrador(DatosCrearAdministrador datosCrearAdministrador){
 
         MapSqlParameterSource parametros = new MapSqlParameterSource();
 
-        parametros.addValue("idAdministrador", administrador.getIdAdministrador());
-        parametros.addValue("correo", administrador.getCorreo());
-        parametros.addValue("nombreCompleto", administrador.getNombreCompleto());
-        parametros.addValue("contrasena", administrador.getContrasena());
-        parametros.addValue("repetirContrasena", administrador.getRepetirContrasena());
+        parametros.addValue("correo", datosCrearAdministrador.getCorreo());
+        parametros.addValue("nombreCompleto", datosCrearAdministrador.getNombreCompleto());
+        parametros.addValue("contrasena", datosCrearAdministrador.getContrasena());
+        parametros.addValue("repetirContrasena", datosCrearAdministrador.getRepetirContrasena());
 
         jdbcTemplate.update(crearAdministrador, parametros);
 

@@ -3,6 +3,7 @@ package com.safedelivery.repositorios.residentes;
 import com.safedelivery.modelos.objetos.DatosActualizacionResidente;
 import com.safedelivery.modelos.objetos.DatosGuardarResidente;
 import com.safedelivery.modelos.objetos.Residente;
+import com.safedelivery.modelos.objetos.TipoDocumento;
 import com.safedelivery.repositorios.RepositorioResidentes;
 import com.safedelivery.utilidades.sqlfiles.SqlStatement;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -27,12 +28,18 @@ public class RepositorioResidenteOracle implements RepositorioResidentes {
     private String consultarResidentePorId;
 
     @SqlStatement(namespace = "residentes",
-        value = "guardarResidentes")
+        value = "guardarResidente")
     private String guardarResidentes;
 
     @SqlStatement(namespace = "residentes",
-        value = "consultarResidentes")
+        value = "consultarResidente")
     private String consultarResidentes;
+
+    @SqlStatement(namespace = "residentes",
+            value = "consultarResidentePorDocumento")
+    private String consultarResidentePorDocumento;
+
+
 
     private NamedParameterJdbcTemplate jdbcTemplate;
     private MapperResidente mapperResidente;
@@ -53,6 +60,7 @@ public class RepositorioResidenteOracle implements RepositorioResidentes {
     public Residente consultarPorId(int id) {
 
         MapSqlParameterSource parametros = new MapSqlParameterSource();
+        parametros.addValue("id", id);
         return jdbcTemplate.queryForObject(consultarResidentePorId, parametros, mapperResidente);
     }
 
@@ -61,7 +69,8 @@ public class RepositorioResidenteOracle implements RepositorioResidentes {
 
         MapSqlParameterSource parametros = new MapSqlParameterSource();
 
-        parametros.addValue("idTipoDocumento", datosActualizacionResidente.getIdTipoDocumento());
+        TipoDocumento tipoDocumento = TipoDocumento.buscarPorNombre(datosActualizacionResidente.getTipoDocumentoNombre());
+        parametros.addValue("idTipoDocumento", tipoDocumento.getId());
         parametros.addValue("apartamento", datosActualizacionResidente.getNumeroApartamento());
         parametros.addValue("numeroDocumento", datosActualizacionResidente.getNumeroDocumento());
         parametros.addValue("nombre", datosActualizacionResidente.getNombre());
@@ -88,7 +97,6 @@ public class RepositorioResidenteOracle implements RepositorioResidentes {
 
         MapSqlParameterSource parametros = new MapSqlParameterSource();
 
-        parametros.addValue("idResidente", datosGuardarResidente.getIdResidente());
         parametros.addValue("idTipoDocumento", datosGuardarResidente.getIdTipoDocumento());
         parametros.addValue("numeroDocumento", datosGuardarResidente.getNumeroDocumento());
         parametros.addValue("nombre", datosGuardarResidente.getNombre());
@@ -99,9 +107,13 @@ public class RepositorioResidenteOracle implements RepositorioResidentes {
 
         jdbcTemplate.update(guardarResidentes, parametros);
 
+    }
 
-
-
+    @Override
+    public Residente consultarPorDocumento(String documento) {
+        MapSqlParameterSource parametros = new MapSqlParameterSource();
+        parametros.addValue("documento", documento);
+        return jdbcTemplate.queryForObject(consultarResidentePorDocumento, parametros, mapperResidente);
     }
 
 

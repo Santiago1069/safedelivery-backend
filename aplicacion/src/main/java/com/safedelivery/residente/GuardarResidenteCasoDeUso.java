@@ -5,9 +5,9 @@ import com.safedelivery.repositorios.RepositorioResidentes;
 
 import javax.inject.Named;
 
+@Named
 public class GuardarResidenteCasoDeUso {
 
-    @Named
     private RepositorioResidentes repositorioResidentes;
 
     public GuardarResidenteCasoDeUso (RepositorioResidentes repositorioResidentes){
@@ -17,7 +17,6 @@ public class GuardarResidenteCasoDeUso {
 
     public void guardarResidente(DatosGuardarResidente datosGuardarResidente){
         repositorioResidentes.guardarResidente(datosGuardarResidente);
-
     }
 
 

@@ -19,7 +19,10 @@ public class ConsultarResidenteCasoDeUso {
 
     public List<Residente> consultar(){
         return repositorioResidentes.consultar();
+    }
 
+    public  Residente consultarPorDocumento(String documento) {
+      return this.repositorioResidentes.consultarPorDocumento(documento);
     }
 
 }

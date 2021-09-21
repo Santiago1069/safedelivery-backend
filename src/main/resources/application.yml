@@ -1,7 +1,7 @@
 version: V1.0
 
 server:
-  port: 8090
+  port: 8091
   servlet:
     session:
       timeout: 21600s
@@ -11,9 +11,9 @@ server:
 oracle:
   spring:
     datasource:
-      url: jdbc:oracle:thin:@${DBURL}
-      username: ${DBUSER}
-      password: ${DBPASSWORD}
+      url: jdbc:oracle:thin:@localhost
+      username: SEIBASOFTWARE
+      password: 101
       driverClassName: oracle.jdbc.driver.OracleDriver
       type: com.zaxxer.hikari.HikariDataSource
 

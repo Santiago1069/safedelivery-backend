@@ -18,4 +18,6 @@ public interface RepositorioResidentes {
     void eliminarResidente(int idResidente);
 
     void guardarResidente(DatosGuardarResidente datosGuardarResidente);
+
+    Residente consultarPorDocumento(String documento);
 }

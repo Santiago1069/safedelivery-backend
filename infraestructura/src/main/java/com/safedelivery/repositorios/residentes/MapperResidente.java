@@ -20,14 +20,14 @@ public class MapperResidente implements RowMapper<Residente> {
         String numeroDocumento = rs.getString("NUMERO_DOCUMENTO");
         String nombre = rs.getString("NOMBRE");
         String apellido = rs.getString("APELLIDO");
-        int celular = rs.getInt("CELULAR");
+        String celular = rs.getString("CELULAR");
         String correo = rs.getString("CORREO_ELECTRONICO");
 
-        int numeroApartamento = rs.getInt("NUMERO_APARTAMENTO");
+        int numeroApartamento = rs.getInt("ID_NUMERO_APARTAMENTO");
         int numeroTorre = rs.getInt("NUMERO_TORRE");
 
         Apartamento apartamento = new Apartamento(numeroApartamento, numeroTorre);
-                rs.getObject("ID_NUMERO_APARTAMENTO");
+
 
         return new Residente(id, tipoDocumento, numeroDocumento, nombre, apellido, celular, correo, apartamento);
 

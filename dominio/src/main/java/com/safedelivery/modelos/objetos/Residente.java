@@ -7,14 +7,14 @@ public class Residente {
     String numeroDocumento;
     String nombre;
     String apellido;
-    int celular;
+    String celular;
     String correo;
     Apartamento apartamento;
 
 
 
     public Residente(int id, TipoDocumento tipoDocumento, String numeroDocumento, String nombre,
-                     String apellido, int celular, String correo, Apartamento apartamento
+                     String apellido, String celular, String correo, Apartamento apartamento
                      ) {
 
         this.id = id;
@@ -48,7 +48,7 @@ public class Residente {
         return apellido;
     }
 
-    public int getCelular() {
+    public String getCelular() {
         return celular;
     }
 
@@ -56,7 +56,7 @@ public class Residente {
         return correo;
     }
 
-    public Apartamento getNumeroApartamento() {
+    public Apartamento getApartamento() {
         return apartamento;
     }
 

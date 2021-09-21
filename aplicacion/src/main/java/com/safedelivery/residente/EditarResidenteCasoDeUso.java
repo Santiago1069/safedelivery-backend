@@ -6,9 +6,9 @@ import com.safedelivery.repositorios.RepositorioResidentes;
 
 import javax.inject.Named;
 
+@Named
 public class EditarResidenteCasoDeUso {
 
-    @Named
     private RepositorioResidentes repositorioResidentes;
 
     public EditarResidenteCasoDeUso (RepositorioResidentes repositorioResidentes){

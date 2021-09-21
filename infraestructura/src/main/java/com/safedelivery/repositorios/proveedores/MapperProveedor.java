@@ -15,7 +15,8 @@ public class MapperProveedor implements RowMapper<Proveedor> {
     public Proveedor mapRow(ResultSet rs, int rowNum) throws SQLException {
         int id = rs.getInt("ID_PROVEEDOR");
         String nombre = rs.getString("NOMBRE");
+        String imagen = rs.getString("IMAGEN");
 
-        return new Proveedor(id, nombre);
+        return new Proveedor(id, nombre, imagen);
     }
 }

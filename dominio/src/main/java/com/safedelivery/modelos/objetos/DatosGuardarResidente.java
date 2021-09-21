@@ -7,7 +7,7 @@ public class DatosGuardarResidente {
     String numeroDocumento;
     String nombre;
     String apellido;
-    int celular;
+    String celular;
     String correo;
     int idNumeroApartamento;
 
@@ -31,7 +31,7 @@ public class DatosGuardarResidente {
         return apellido;
     }
 
-    public int getCelular() {
+    public String getCelular() {
         return celular;
     }
 
@@ -41,5 +41,37 @@ public class DatosGuardarResidente {
 
     public int getIdNumeroApartamento() {
         return idNumeroApartamento;
+    }
+
+    public void setIdResidente(int idResidente) {
+        this.idResidente = idResidente;
+    }
+
+    public void setIdTipoDocumento(int idTipoDocumento) {
+        this.idTipoDocumento = idTipoDocumento;
+    }
+
+    public void setNumeroDocumento(String numeroDocumento) {
+        this.numeroDocumento = numeroDocumento;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public void setIdNumeroApartamento(int idNumeroApartamento) {
+        this.idNumeroApartamento = idNumeroApartamento;
     }
 }

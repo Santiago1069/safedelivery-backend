@@ -9,4 +9,12 @@ public class Apartamento {
         this.numeroApartamento = numeroApartamento;
         this.numeroTorre = numeroTorre;
     }
+
+    public int getNumeroApartamento() {
+        return numeroApartamento;
+    }
+
+    public int getNumeroTorre() {
+        return numeroTorre;
+    }
 }

@@ -20,8 +20,9 @@ public class MapperEntregas implements RowMapper<Entrega> {
 
         int idProveedorentidad = rs.getInt("ID_PROVEEDOR");
         String nombreProveedor = rs.getString("NOMBRE");
+        String imagen = rs.getString("IMAGEN");
 
-        Proveedor idProveedorCreado = new Proveedor (idProveedorentidad, nombreProveedor);
+        Proveedor idProveedorCreado = new Proveedor (idProveedorentidad, nombreProveedor, imagen);
 
         // --------------------------------------------------------------------------------
         int idEmpleadoProveedor = rs.getInt("ID_EMPLEADO_PROVEEDOR");
@@ -45,7 +46,7 @@ public class MapperEntregas implements RowMapper<Entrega> {
         String numeroDocumentoResidente = rs.getString("NUMERO_DOCUMENTO");
         String nombreResidente = rs.getString("NOMBRE");
         String apellidoResidente = rs.getString("APELLIDO");
-        int celularResidente = rs.getInt("CELULAR");
+        String celularResidente = rs.getString("CELULAR");
         String correoResidente = rs.getString("CORREO_ELECTRONICO");
 
         Residente residente = new Residente(idResidente, TipoDocumento.obtenerPorId(idTipoDocumentoResidente), numeroDocumentoResidente, nombreResidente, apellidoResidente, celularResidente, correoResidente, idapartamentoResidente);

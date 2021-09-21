@@ -25,4 +25,18 @@ public enum TipoDocumento {
 
         return null;
     }
+
+    public static TipoDocumento buscarPorNombre(String nombre) {
+        for (TipoDocumento t : values()) {
+            if(t.name().equals(nombre)){
+                return t;
+            }
+        }
+
+        return null;
+    }
+
+    public int getId() {
+        return id;
+    }
 }
