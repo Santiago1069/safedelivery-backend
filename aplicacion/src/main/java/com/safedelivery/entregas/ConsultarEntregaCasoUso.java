@@ -8,8 +8,6 @@ import java.util.List;
 @Named
 public class ConsultarEntregaCasoUso {
 
-
-
     public ConsultarEntregaCasoUso() {
 
     }

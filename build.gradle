@@ -50,10 +50,13 @@ buildscript {
         classpath(
             "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
         )
+
     }
 }
 
 dependencies {
+    implementation 'junit:junit:4.12'
+    implementation 'junit:junit:4.12'
     configurations {
         runtime.exclude module: 'spring-boot-starter-tomcat'
         compile.exclude module: 'spring-boot-starter-tomcat'
@@ -61,8 +64,10 @@ dependencies {
     compile project.ext.springbootweb
     implementation project.ext.springbootundertow
     implementation (group: 'com.oracle', name: 'ojdbc6', version: '11.2.0.3')
+    implementation (group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.1.2')
 
     implementation project(':infraestructura')
+
 }
 
 compileJava.options.encoding = 'UTF-8'

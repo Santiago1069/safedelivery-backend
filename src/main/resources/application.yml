@@ -12,8 +12,8 @@ oracle:
   spring:
     datasource:
       url: jdbc:oracle:thin:@localhost
-      username: SEIBASOFTWARE
-      password: 101
+      username: SAFE_DELIVERY
+      password: 1069
       driverClassName: oracle.jdbc.driver.OracleDriver
       type: com.zaxxer.hikari.HikariDataSource
 

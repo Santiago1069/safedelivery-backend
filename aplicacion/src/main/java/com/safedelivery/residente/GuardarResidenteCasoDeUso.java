@@ -19,6 +19,4 @@ public class GuardarResidenteCasoDeUso {
         repositorioResidentes.guardarResidente(datosGuardarResidente);
     }
 
-
-
 }

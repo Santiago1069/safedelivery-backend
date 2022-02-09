@@ -7,6 +7,9 @@ sourceCompatibility = '11'
 dependencies {
 
     implementation project.ext.inject
+    implementation project.ext.junit4
+    implementation project.ext.mockito
+
 
     implementation project(':dominio')
 
